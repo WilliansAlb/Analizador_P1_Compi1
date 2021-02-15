@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Analizador_P1"
