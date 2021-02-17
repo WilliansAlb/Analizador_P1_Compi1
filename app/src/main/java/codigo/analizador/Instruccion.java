@@ -5,13 +5,14 @@
  */
 package codigo.analizador;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author yelbetto
  */
-public class Instruccion {
+public class Instruccion implements Serializable {
     private boolean graficar;
     private String figura;
     private ArrayList<String> parametros;

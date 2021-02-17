@@ -13,9 +13,14 @@ public class Lienzo extends View {
 
     public Canvas canv;
     public Paint pinc;
+    public ArrayList<Instruccion> inst;
 
     public Lienzo(Context context){
         super(context);
+    }
+    public Lienzo(Context context,ArrayList<Instruccion> figuras){
+        super(context);
+        this.inst = figuras;
     }
 
     protected void onDraw(Canvas canvas){
@@ -26,9 +31,7 @@ public class Lienzo extends View {
         pincel1.setColor(Color.BLACK);
         this.canv = canvas;
         this.pinc = pincel1;
-        //agregarCirculo();
-        //agregarPolig();
-        //agregarLinea();
+        dibujandoFiguras(inst);
     }
     public void agregarCirculo(){
         canv.drawCircle(20, 40, 10, pinc);
@@ -131,5 +134,13 @@ public class Lienzo extends View {
                 pinc.setColor(Color.WHITE);
                 break;
         }
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+    {
+        int width = 3000;
+        int height = 3000 + 50; // Since 3000 is bottom of last Rect to be drawn added and 50 for padding.
+        setMeasuredDimension(width, height);
     }
 }
