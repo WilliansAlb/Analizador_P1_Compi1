@@ -1,6 +1,8 @@
 package codigo.analizador;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TableLayout;
@@ -18,6 +20,7 @@ public class Tabla {
     private TextView cell;
     private int index_C;
     private int index_R;
+    private boolean multicolor = false;
 
     public Tabla(TableLayout tabla, Context contexto){
         this.tabla = tabla;
@@ -40,7 +43,7 @@ public class Tabla {
     private void newCell(){
         cell = new TextView(contexto);
         cell.setGravity(Gravity.CENTER);
-        cell.setTextSize(25);
+        cell.setTextSize(15);
     }
 
     private void crearHeader(){
@@ -55,9 +58,9 @@ public class Tabla {
     }
     private void crearTablaDatos(){
         String info;
-        for (index_R=1; index_R <= header.length; index_R++){
+        for (index_R=1; index_R <= datos.size(); index_R++){
             newRow();
-            for(index_C = 0; index_C <header.length; index_C++){
+            for(index_C = 0; index_C < header.length; index_C++){
                 newCell();
                 String[] filas = datos.get(index_R-1);
                 info = (index_C<filas.length)?filas[index_C]:"";
@@ -73,6 +76,34 @@ public class Tabla {
         params.setMargins(1,1,1,1);
         params.weight = 1;
         return params;
+    }
+
+    public void colorHeader(int color){
+        index_C = 0;
+        while (index_C < header.length){
+            cell = getCell(0,index_C++);
+            cell.setBackgroundColor(color);
+            cell.setTypeface(null, Typeface.BOLD);
+        }
+    }
+
+    public void colorDatos(int color, int color2){
+        for (index_R=1; index_R <= datos.size(); index_R++){
+            multicolor = !multicolor;
+            for(index_C = 0; index_C < header.length; index_C++){
+                cell = getCell(index_R,index_C);
+                cell.setBackgroundColor((multicolor)?color:color2);
+            }
+        }
+    }
+
+    private TableRow getRow(int index){
+        return (TableRow) tabla.getChildAt(index);
+    }
+
+    private TextView getCell(int rowIndex, int columnIndex){
+        row = getRow(rowIndex);
+        return (TextView) row.getChildAt(columnIndex);
     }
 
     public void addItems(String[] item){

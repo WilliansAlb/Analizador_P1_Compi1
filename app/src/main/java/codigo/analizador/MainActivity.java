@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
             parser s = new parser(new LexerCup(new StringReader(ST)));
             try {
                 s.parse();
-                Intent intent = new Intent(MainActivity.this ,Resultado.class);
-                intent.putExtra("miLista", s.getTemp());
+                Intent intent = new Intent(MainActivity.this ,Reportes.class);
+                //intent.putExtra("miLista", s.getTemp());
                 startActivity(intent);
             } catch (Exception ex) {
                 System.out.println("error por "+ex);
