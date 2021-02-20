@@ -9,36 +9,41 @@ package codigo.analizador;
 public class sym {
   /* terminals */
   public static final int LINEA = 2;
-  public static final int MULTIPLICACION = 21;
-  public static final int DIVISION = 22;
-  public static final int SUMA = 19;
-  public static final int CURVA = 13;
-  public static final int ANIMAR = 12;
-  public static final int CAFE = 8;
-  public static final int CUADRADO = 18;
-  public static final int VERDE = 5;
-  public static final int ROJO = 4;
-  public static final int GRAFICAR = 11;
-  public static final int AMARILLO = 6;
-  public static final int COMA = 14;
+  public static final int MULTIPLICACION = 26;
+  public static final int DIVISION = 27;
+  public static final int SUMA = 24;
+  public static final int CURVA = 18;
+  public static final int ANIMAR = 5;
+  public static final int CAFE = 11;
+  public static final int CUADRADO = 23;
+  public static final int OBJETO = 4;
+  public static final int VERDE = 8;
+  public static final int ROJO = 7;
+  public static final int GRAFICAR = 14;
+  public static final int AMARILLO = 9;
+  public static final int COMA = 19;
   public static final int EOF = 0;
-  public static final int MORADO = 9;
-  public static final int NUMERO = 25;
-  public static final int PARENTESIS_C = 24;
-  public static final int POLIGONO = 17;
+  public static final int MORADO = 12;
+  public static final int POLIGONO = 22;
+  public static final int NUMERO = 17;
+  public static final int PARENTESIS_C = 16;
   public static final int error = 1;
-  public static final int PARENTESIS_A = 23;
-  public static final int CIRCULO = 15;
-  public static final int AZUL = 3;
-  public static final int NEGRO = 10;
-  public static final int NARANJA = 7;
-  public static final int RECTANGULO = 16;
-  public static final int UMINUS = 26;
-  public static final int RESTA = 20;
+  public static final int CIRCULO = 20;
+  public static final int PARENTESIS_A = 15;
+  public static final int AZUL = 6;
+  public static final int ANTERIOR = 3;
+  public static final int NEGRO = 13;
+  public static final int RECTANGULO = 21;
+  public static final int NARANJA = 10;
+  public static final int UMINUS = 28;
+  public static final int RESTA = 25;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
   "LINEA",
+  "ANTERIOR",
+  "OBJETO",
+  "ANIMAR",
   "AZUL",
   "ROJO",
   "VERDE",
@@ -48,7 +53,9 @@ public class sym {
   "MORADO",
   "NEGRO",
   "GRAFICAR",
-  "ANIMAR",
+  "PARENTESIS_A",
+  "PARENTESIS_C",
+  "NUMERO",
   "CURVA",
   "COMA",
   "CIRCULO",
@@ -59,9 +66,6 @@ public class sym {
   "RESTA",
   "MULTIPLICACION",
   "DIVISION",
-  "PARENTESIS_A",
-  "PARENTESIS_C",
-  "NUMERO",
   "UMINUS"
   };
 }

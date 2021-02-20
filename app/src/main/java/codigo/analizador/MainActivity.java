@@ -38,12 +38,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         button2.setOnClickListener(v -> {
+            ArrayList<Operadores> listado_operadores = new ArrayList<>();
             String ST = label.getText().toString();
             parser s = new parser(new LexerCup(new StringReader(ST)));
             try {
                 s.parse();
-                Intent intent = new Intent(MainActivity.this ,Reportes.class);
-                //intent.putExtra("miLista", s.getTemp());
+                listado_operadores = s.getListado_operadores();
+                //Intent intent = new Intent(MainActivity.this ,Reportes.class);
+                Intent intent = new Intent(MainActivity.this ,Resultado.class);
+                intent.putExtra("miLista", s.getTemp());
+                //intent.putExtra("operadores",listado_operadores);
+                //intent.putExtra("colores",s.getListado_usos());
                 startActivity(intent);
             } catch (Exception ex) {
                 System.out.println("error por "+ex);

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Analizador_P1</string>
+    <string name="reporteOperadores">Reporte de ocurrencias de operadores matematicos</string>
+    <string name="reporteColores">Reporte de uso de colores</string>
+    <string name="reporteObjetos">Reporte de uso de objetos</string>
+    <string name="reporteAnimaciones">Reporte de uso de animaciones</string>
 </resources>

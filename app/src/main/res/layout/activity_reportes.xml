@@ -15,11 +15,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/reporte_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_vertical"
+            android:text="@string/reporteOperadores"
+            tools:text="@string/reporteOperadores" />
+
         <TableLayout
             android:id="@+id/rep_operadores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/reporte_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/reporteColores"
+            tools:text="@string/reporteColores" />
 
         <TableLayout
             android:id="@+id/rep_colores"
@@ -27,11 +43,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />
 
+        <TextView
+            android:id="@+id/reporte_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/reporteObjetos"
+            tools:text="@string/reporteObjetos" />
+
         <TableLayout
             android:id="@+id/rep_objetos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/reporte_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/reporteAnimaciones"
+            tools:text="@string/reporteAnimaciones" />
 
         <TableLayout
             android:id="@+id/rep_animaciones"

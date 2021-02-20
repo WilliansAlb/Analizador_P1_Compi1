@@ -31,7 +31,8 @@ public class Lienzo extends View {
         pincel1.setColor(Color.BLACK);
         this.canv = canvas;
         this.pinc = pincel1;
-        dibujandoFiguras(inst);
+        agregarPoligono(100,100,400,600,5,"rojo");
+        //dibujandoFiguras(inst);
     }
     public void agregarCirculo(){
         canv.drawCircle(20, 40, 10, pinc);
@@ -96,14 +97,18 @@ public class Lienzo extends View {
         canv.restore();
     }
 
-    public void agregarPoligono2(int x, int y, int ancho, int alto, int lados, String color){
+    public void agregarPoligono(int x, int y, int ancho, int alto, int lados, String color){
         cambiar_color(color);
+        int nuevo_ancho = ancho+ x;
+        int nuevo_alto = alto+y;
         Path path = new Path();
-        path.moveTo(20, 20);
-        path.lineTo(400, 20);
-        path.lineTo(600, 300);
-        path.lineTo(400, 400);
-        path.lineTo(20, 400);
+        path.moveTo(x,y);
+        path.lineTo(x+(2*ancho/3),y);
+        path.lineTo(nuevo_ancho, y+(alto/3));
+        path.lineTo(nuevo_ancho, y+(2*alto/3));
+        path.lineTo(x+(2*ancho/3),nuevo_alto);
+        path.lineTo(x+(ancho/3), nuevo_alto);
+        path.lineTo(x,y+(2*alto/3));
         path.close();
         canv.drawPath(path,pinc);
     }
