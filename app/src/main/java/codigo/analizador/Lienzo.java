@@ -5,9 +5,15 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathDashPathEffect;
+import android.graphics.PathMeasure;
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.view.View;
 
 import java.util.ArrayList;
+
+import static android.graphics.Paint.Style.FILL;
+import static android.graphics.Paint.Style.STROKE;
 
 public class Lienzo extends View {
 
@@ -15,9 +21,12 @@ public class Lienzo extends View {
     public Paint pinc;
     public ArrayList<Instruccion> inst;
 
+    int iCurStep = 0;
+    int iCurStepY = 0;
     public Lienzo(Context context){
         super(context);
     }
+
     public Lienzo(Context context,ArrayList<Instruccion> figuras){
         super(context);
         this.inst = figuras;
@@ -31,8 +40,12 @@ public class Lienzo extends View {
         pincel1.setColor(Color.BLACK);
         this.canv = canvas;
         this.pinc = pincel1;
-        agregarPoligono(100,100,400,600,5,"rojo");
-        //dibujandoFiguras(inst);
+        this.pinc.setStyle(FILL);
+        dibujando_Trayectorias(100,100,500,100);
+        dibujandoFiguras(inst);
+        iCurStep++;
+        iCurStepY++;
+        invalidate();
     }
     public void agregarCirculo(){
         canv.drawCircle(20, 40, 10, pinc);
@@ -93,6 +106,7 @@ public class Lienzo extends View {
             path.lineTo(radius * (float) Math.cos(a * i), radius * (float) Math.sin(a * i));
         }
         path.close();
+
         canv.drawPath(path, pinc);
         canv.restore();
     }
@@ -102,15 +116,14 @@ public class Lienzo extends View {
         int nuevo_ancho = ancho+ x;
         int nuevo_alto = alto+y;
         Path path = new Path();
+        Path dos = new Path();
+        dos.moveTo(x,y);
+        dos.lineTo(x+200,y);
         path.moveTo(x,y);
-        path.lineTo(x+(2*ancho/3),y);
-        path.lineTo(nuevo_ancho, y+(alto/3));
-        path.lineTo(nuevo_ancho, y+(2*alto/3));
-        path.lineTo(x+(2*ancho/3),nuevo_alto);
-        path.lineTo(x+(ancho/3), nuevo_alto);
-        path.lineTo(x,y+(2*alto/3));
+        path.lineTo(nuevo_ancho,y);
+        path.lineTo(nuevo_ancho,nuevo_alto);
+        path.lineTo(x,nuevo_alto);
         path.close();
-        canv.drawPath(path,pinc);
     }
 
     public void agregarRectangulo(int x, int y, int ancho, int alto, String color){
@@ -133,12 +146,45 @@ public class Lienzo extends View {
                 pinc.setColor(Color.RED);
                 break;
             case "morado":
-                pinc.setColor(Color.MAGENTA);
+                pinc.setColor(Color.rgb(128,0,128));
+                break;
+            case "naranja":
+                pinc.setColor(Color.rgb(225, 165, 0));
+                break;
+            case "negro":
+                pinc.setColor(Color.BLACK);
+                break;
+            case "cafe":
+                pinc.setColor(Color.rgb(165,42,42));
                 break;
             default:
                 pinc.setColor(Color.WHITE);
                 break;
         }
+    }
+
+    public void dibujando_Trayectorias(int x, int y, int nx, int ny){
+        Path sPath = new Path();
+        if (y==ny){
+            sPath.moveTo(x,y);
+            sPath.cubicTo(x, y,(x+nx)/2,y+(y+ny)/2,nx,ny);
+        } else {
+            sPath.cubicTo(x, y,(x+nx)/2+(nx-x)/2,(y+ny)/2,nx,ny);
+        }
+        Paint pathPaint = new Paint();
+        pathPaint.setColor(Color.BLUE);
+
+        PathMeasure pm = new PathMeasure(sPath, false);
+        float fSegmentLen = pm.getLength() / 200;//we'll get 20 points from path to animate the circle
+        float afP[] = {0f,0f};
+
+        pm.getPosTan(fSegmentLen * iCurStep, afP, null);
+        canv.drawPath(sPath,pathPaint);
+        canv.drawCircle(afP[0],afP[1],20,pathPaint);
+        canv.drawLine(afP[0],afP[1],200+afP[0],200+afP[1],pathPaint);
+        canv.drawRect(afP[0],afP[1],afP[0]+200,afP[1]+200,pathPaint);
+        //canv.drawRect(afP[0],afP[1],0f,0f,pathPaint);
+
     }
 
     @Override
@@ -148,4 +194,5 @@ public class Lienzo extends View {
         int height = 3000 + 50; // Since 3000 is bottom of last Rect to be drawn added and 50 for padding.
         setMeasuredDimension(width, height);
     }
+
 }

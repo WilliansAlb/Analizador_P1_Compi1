@@ -46,9 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 listado_operadores = s.getListado_operadores();
                 //Intent intent = new Intent(MainActivity.this ,Reportes.class);
                 Intent intent = new Intent(MainActivity.this ,Resultado.class);
+                //Intent intent = new Intent(MainActivity.this ,Animado.class);
                 intent.putExtra("miLista", s.getTemp());
-                //intent.putExtra("operadores",listado_operadores);
-                //intent.putExtra("colores",s.getListado_usos());
+                intent.putExtra("operadores",listado_operadores);
+                intent.putExtra("colores",s.getListado_usos());
                 startActivity(intent);
             } catch (Exception ex) {
                 System.out.println("error por "+ex);

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Analizador_P1">
-        <activity android:name=".Reportes"></activity>
+        <activity android:name=".Animado"></activity>
+        <activity android:name=".Reportes" />
         <activity android:name=".Resultado" />
         <activity android:name=".MainActivity">
             <intent-filter>

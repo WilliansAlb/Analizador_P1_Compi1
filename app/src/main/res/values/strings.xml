@@ -4,4 +4,6 @@
     <string name="reporteColores">Reporte de uso de colores</string>
     <string name="reporteObjetos">Reporte de uso de objetos</string>
     <string name="reporteAnimaciones">Reporte de uso de animaciones</string>
+    <string name="btn_ver_reportes">VER REPORTE</string>
+    <string name="btn_ver_animacion">VER ANIMACIONES</string>
 </resources>

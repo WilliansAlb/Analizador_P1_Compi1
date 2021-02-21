@@ -20,16 +20,22 @@
             android:id="@+id/btn_reporte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="VER REPORTES" />
+            android:text="@string/btn_ver_reportes" />
 
         <HorizontalScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="640dp">
 
             <ScrollView
                 android:id="@+id/scroll2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/btn_animar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_ver_animacion" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

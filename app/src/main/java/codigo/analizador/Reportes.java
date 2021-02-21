@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TableLayout;
 
 import java.util.ArrayList;
@@ -21,13 +22,13 @@ public class Reportes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reportes);
-        ArrayList<Operadores> lista = (ArrayList<Operadores>) getIntent().getExtras().get("operadores");
+        ArrayList<Operadores> lista = (ArrayList<Operadores>) getIntent().getExtras().get("opera");
         for (int i = 0; i < lista.size(); i++){
             Operadores temporal = lista.get(i);
             String[] temp = {temporal.getOperacion(),temporal.getFila(),temporal.getColumna(),temporal.getOcurrencia()};
             datos_reporte1.add(temp);
         }
-        ColorObjeto creando = (ColorObjeto) getIntent().getExtras().get("colores");
+        ColorObjeto creando = (ColorObjeto) getIntent().getExtras().get("color");
         agregandoColores(creando);
         agregandoFiguras(creando);
         agregandoAnimaciones(creando);
@@ -59,6 +60,8 @@ public class Reportes extends AppCompatActivity {
         tab4.agregarDatos(datos_reporte4);
         tab4.colorHeader(Color.WHITE);
         tab4.colorDatos(Color.GRAY,Color.LTGRAY);
+        tabla4.setVisibility(View.GONE);
+
     }
 
     public void agregandoColores(ColorObjeto temp){
