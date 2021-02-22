@@ -61,9 +61,11 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 } catch (Exception ex) {
-                    System.out.println("error por " + ex);
+                    toast.setText("Ocurrio un error: "+ex);
+                    toast.show();
                 }
             } else {
+                toast.setText("Debes de ingresar una instruccion primero!");
                 toast.show();
             }
         });

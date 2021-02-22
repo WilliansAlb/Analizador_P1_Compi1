@@ -93,7 +93,7 @@ public class Reportes extends AppCompatActivity {
             tab4.addHeader(header4);
             tab4.agregarDatos(datos_reporte4);
             tab4.colorHeader(Color.WHITE);
-            tab4.colorDatos(Color.rgb(229, 176, 51),Color.rgb(255, 201, 76));
+            tab4.colorDatos(Color.GRAY,Color.LTGRAY);
             report5.setVisibility(View.GONE);
             tabla5.setVisibility(View.GONE);
         }
