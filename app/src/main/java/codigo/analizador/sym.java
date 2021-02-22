@@ -13,6 +13,7 @@ public class sym {
   public static final int DIVISION = 27;
   public static final int SUMA = 24;
   public static final int CURVA = 18;
+  public static final int ERRLEX = 29;
   public static final int ANIMAR = 5;
   public static final int CAFE = 11;
   public static final int CUADRADO = 23;
@@ -38,35 +39,36 @@ public class sym {
   public static final int UMINUS = 28;
   public static final int RESTA = 25;
   public static final String[] terminalNames = new String[] {
-  "EOF",
-  "error",
-  "LINEA",
-  "ANTERIOR",
-  "OBJETO",
-  "ANIMAR",
-  "AZUL",
-  "ROJO",
-  "VERDE",
-  "AMARILLO",
-  "NARANJA",
-  "CAFE",
-  "MORADO",
-  "NEGRO",
-  "GRAFICAR",
-  "PARENTESIS_A",
-  "PARENTESIS_C",
-  "NUMERO",
-  "CURVA",
-  "COMA",
-  "CIRCULO",
-  "RECTANGULO",
-  "POLIGONO",
-  "CUADRADO",
-  "SUMA",
-  "RESTA",
-  "MULTIPLICACION",
-  "DIVISION",
-  "UMINUS"
+          "EOF",
+          "error",
+          "LINEA",
+          "ANTERIOR",
+          "OBJETO",
+          "ANIMAR",
+          "AZUL",
+          "ROJO",
+          "VERDE",
+          "AMARILLO",
+          "NARANJA",
+          "CAFE",
+          "MORADO",
+          "NEGRO",
+          "GRAFICAR",
+          "PARENTESIS_A",
+          "PARENTESIS_C",
+          "NUMERO",
+          "CURVA",
+          "COMA",
+          "CIRCULO",
+          "RECTANGULO",
+          "POLIGONO",
+          "CUADRADO",
+          "SUMA",
+          "RESTA",
+          "MULTIPLICACION",
+          "DIVISION",
+          "UMINUS",
+          "ERRLEX"
   };
 }
 
