@@ -6,4 +6,7 @@
     <string name="reporteAnimaciones">Reporte de uso de animaciones</string>
     <string name="btn_ver_reportes">VER REPORTE</string>
     <string name="btn_ver_animacion">VER ANIMACIONES</string>
+    <string name="titulo_resultado">RESULTADO</string>
+    <string name="falta_texto">Debes ingresar una instruccion primero!</string>
+
 </resources>

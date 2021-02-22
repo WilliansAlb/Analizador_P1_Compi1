@@ -31,6 +31,23 @@ public class Resultado extends AppCompatActivity {
         layout1.addView(fondo);
         final Button button = (Button) findViewById(R.id.btn_reporte);
         final Button button2 = (Button) findViewById(R.id.btn_animar);
+        Instruccion temporal;
+        int animaciones = 0;
+        for (int i = 1; i<lista.size(); i++) {
+             temporal = lista.get(i);
+            if (!temporal.isGraficar()) {
+                Instruccion b = lista.get(i - 1);
+                if (b.isGraficar()) {
+                    animaciones++;
+                }
+            }
+        }
+        if (animaciones==0){
+            button2.setVisibility(View.GONE);
+        } else {
+            String numero = "VER ANIMACIONES ("+animaciones+")";
+            button2.setText(numero);
+        }
         button.setOnClickListener(v -> {
             Intent intent = new Intent(Resultado.this ,Reportes.class);
             intent.putExtra("opera",lista2);
@@ -38,9 +55,12 @@ public class Resultado extends AppCompatActivity {
             startActivity(intent);
         });
         button2.setOnClickListener(v -> {
-            Intent intent = new Intent(Resultado.this ,Animado.class);
-            intent.putExtra("lista",lista);
-            startActivity(intent);
+            //Intent intent = new Intent(Resultado.this ,Animado.class);
+            //intent.putExtra("lista",lista);
+            //startActivity(intent);
+            fondo.invalidate();
+            fondo.setAnimados(true);
+            fondo.postInvalidateDelayed(1000);
         });
     }
 }
