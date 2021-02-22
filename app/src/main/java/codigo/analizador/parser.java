@@ -467,7 +467,7 @@ public class parser extends java_cup.runtime.lr_parser {
                 case 5: // tipo_instruccion ::= error
                 {
                     Object RESULT =null;
-
+                    System.out.println("error en tipo_ins");
                     CUP$parser$result = parser.getSymbolFactory().newSymbol("tipo_instruccion",9, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
                 }
                 return CUP$parser$result;
@@ -500,7 +500,7 @@ public class parser extends java_cup.runtime.lr_parser {
                 case 8: // animacion ::= error
                 {
                     Object RESULT =null;
-                    System.out.println("error animacion");
+                    System.out.println("error en animacion");
                     CUP$parser$result = parser.getSymbolFactory().newSymbol("animacion",4, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
                 }
                 return CUP$parser$result;
@@ -605,7 +605,7 @@ public class parser extends java_cup.runtime.lr_parser {
                 case 17: // color ::= error
                 {
                     Object RESULT =null;
-
+                    System.out.println("color");
                     CUP$parser$result = parser.getSymbolFactory().newSymbol("color",0, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
                 }
                 return CUP$parser$result;
@@ -659,7 +659,7 @@ public class parser extends java_cup.runtime.lr_parser {
                 case 23: // figura ::= error
                 {
                     Object RESULT =null;
-
+                    System.out.println("error en figura");
                     CUP$parser$result = parser.getSymbolFactory().newSymbol("figura",1, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
                 }
                 return CUP$parser$result;
@@ -740,7 +740,7 @@ public class parser extends java_cup.runtime.lr_parser {
                     int p5left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
                     int p5right = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
                     Object p5 = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
-                    listado = new ArrayList<>(); listado.add(p1.toString()); listado.add(p2.toString()); listado.add(p3.toString()); listado.add(p4.toString()); listado.add(p5.toString());
+                    if (p1!=null && p2!=null && p3!= null && p4!=null && p5!=null){listado = new ArrayList<>(); listado.add(p1.toString()); listado.add(p2.toString()); listado.add(p3.toString()); listado.add(p4.toString()); listado.add(p5.toString());}
                     CUP$parser$result = parser.getSymbolFactory().newSymbol("cinco_param",7, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-10)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
                 }
                 return CUP$parser$result;
@@ -776,7 +776,7 @@ public class parser extends java_cup.runtime.lr_parser {
                     int p6left = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).left;
                     int p6right = ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)).right;
                     Object p6 = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.elementAt(CUP$parser$top-1)).value;
-                    listado = new ArrayList<>(); listado.add(p1.toString()); listado.add(p2.toString()); listado.add(p3.toString()); listado.add(p4.toString()); listado.add(p5.toString()); listado.add(p6.toString());
+                    if (p1!=null && p2!=null && p3!= null && p4!=null && p5!=null && p6!=null){listado = new ArrayList<>(); listado.add(p1.toString()); listado.add(p2.toString()); listado.add(p3.toString()); listado.add(p4.toString()); listado.add(p5.toString());listado.add(p6.toString());}
                     CUP$parser$result = parser.getSymbolFactory().newSymbol("seis_param",8, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-12)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
                 }
                 return CUP$parser$result;

@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("hay_errores",true);
                         intent.putExtra("lista_errores", s.getListado_errores());
                         intent.putExtra("texto_ingresado",ST);
-                        System.out.println("aca");
                         startActivity(intent);
                     }
                 } catch (Exception ex) {
