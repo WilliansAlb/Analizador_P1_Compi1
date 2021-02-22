@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">Analizador_P1</string>
-    <string name="reporteOperadores">Reporte de ocurrencias de operadores matematicos</string>
-    <string name="reporteColores">Reporte de uso de colores</string>
-    <string name="reporteObjetos">Reporte de uso de objetos</string>
-    <string name="reporteAnimaciones">Reporte de uso de animaciones</string>
+    <string name="reporteOperadores">REPORTE USO DE OPERADORES MATEMATICOS</string>
+    <string name="reporteColores">REPORTE USO DE COLORES</string>
+    <string name="reporteObjetos">REPORTE USO DE OBJETOS</string>
+    <string name="reporteAnimaciones">REPORTE USO DE ANIMACIONES</string>
     <string name="btn_ver_reportes">VER REPORTE</string>
     <string name="btn_ver_animacion">VER ANIMACIONES</string>
     <string name="titulo_resultado">RESULTADO</string>
     <string name="falta_texto">Debes ingresar una instruccion primero!</string>
+    <string name="reporteErrores">REPORTE DE ERRORES</string>
 
 </resources>

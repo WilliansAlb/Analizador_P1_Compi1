@@ -7,70 +7,99 @@
     android:background="#003933"
     tools:context=".Reportes">
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/reporte_1"
-            android:layout_width="match_parent"
+        <ScrollView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center|center_vertical"
-            android:text="@string/reporteOperadores"
-            tools:text="@string/reporteOperadores" />
+            android:layout_gravity="start">
 
-        <TableLayout
-            android:id="@+id/rep_operadores"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp" />
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/reporte_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center|center_horizontal|center_vertical"
-            android:text="@string/reporteColores"
-            tools:text="@string/reporteColores" />
+                <TextView
+                    android:id="@+id/reporte_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_vertical"
+                    android:text="@string/reporteOperadores"
+                    tools:text="@string/reporteOperadores" />
 
-        <TableLayout
-            android:id="@+id/rep_colores"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp" />
+                <TableLayout
+                    android:id="@+id/rep_operadores"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" />
 
-        <TextView
-            android:id="@+id/reporte_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="@string/reporteObjetos"
-            tools:text="@string/reporteObjetos" />
+                <TextView
+                    android:id="@+id/reporte_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:text="@string/reporteColores"
+                    tools:text="@string/reporteColores" />
 
-        <TableLayout
-            android:id="@+id/rep_objetos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp" />
+                <TableLayout
+                    android:id="@+id/rep_colores"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" />
 
-        <TextView
-            android:id="@+id/reporte_4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="@string/reporteAnimaciones"
-            tools:text="@string/reporteAnimaciones" />
+                <TextView
+                    android:id="@+id/reporte_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/reporteObjetos"
+                    tools:text="@string/reporteObjetos" />
 
-        <TableLayout
-            android:id="@+id/rep_animaciones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp" />
+                <TableLayout
+                    android:id="@+id/rep_objetos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/reporte_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/reporteAnimaciones"
+                    tools:text="@string/reporteAnimaciones" />
+
+                <TableLayout
+                    android:id="@+id/rep_animaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" />
+
+                <TextView
+                    android:id="@+id/reporte_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:text="@string/reporteErrores" />
+
+                <TableLayout
+                    android:id="@+id/rep_errores"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

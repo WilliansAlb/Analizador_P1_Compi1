@@ -24,7 +24,9 @@ public class Resultado extends AppCompatActivity {
         setContentView(R.layout.activity_resultado);
         ArrayList<Instruccion> lista = (ArrayList<Instruccion>) getIntent().getExtras().get("miLista");
         ArrayList<Operadores> lista2 = (ArrayList<Operadores>) getIntent().getExtras().get("operadores");
+        ArrayList<String[]> ocur = (ArrayList<String[]>) getIntent().getExtras().get("list_ocur");
         ColorObjeto creando = (ColorObjeto) getIntent().getExtras().get("colores");
+        String ingresado = (String) getIntent().getExtras().get("texto_ingresado");
         ScrollView layout1 = (ScrollView) findViewById(R.id.scroll2);
         Lienzo fondo = new Lienzo(this,lista);
         fondo.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
@@ -52,6 +54,9 @@ public class Resultado extends AppCompatActivity {
             Intent intent = new Intent(Resultado.this ,Reportes.class);
             intent.putExtra("opera",lista2);
             intent.putExtra("color",creando);
+            intent.putExtra("list_ocur",ocur);
+            intent.putExtra("hay_errores",false);
+            intent.putExtra("texto_ingresado",ingresado);
             startActivity(intent);
         });
         button2.setOnClickListener(v -> {

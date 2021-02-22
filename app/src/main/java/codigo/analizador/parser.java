@@ -344,7 +344,7 @@ public class parser extends java_cup.runtime.lr_parser {
     public void syntax_error(Symbol cur_token) {
         System.out.println(symbl_name_from_id(expected_token_ids().get(0)));
         System.out.println("syntaxerr: " + symbl_name_from_id(cur_token.sym) +" Linea: "+cur_token.right+" Columna: "+cur_token.left+" Valor:"+cur_token.value);
-        agregandoErrores(symbl_name_from_id(cur_token.sym),cur_token.right,cur_token.left,"Sintactico","Se esperaba: {"+nombres(expected_token_ids())+"}\n");
+        agregandoErrores(cur_token.value.toString(),cur_token.right,cur_token.left,"Sintactico","Se esperaba: {"+nombres(expected_token_ids())+"}\n");
     }
 
     public String nombres(List<Integer> nombres){
@@ -835,7 +835,7 @@ public class parser extends java_cup.runtime.lr_parser {
                     int nleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
                     int nright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
                     Object n = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
-                    if(n!=null){RESULT = Integer.parseInt(n.toString());}
+                    if(n!=null){RESULT = (int)Double.parseDouble(n.toString());}
                     CUP$parser$result = parser.getSymbolFactory().newSymbol("operacion",3, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
                 }
                 return CUP$parser$result;
